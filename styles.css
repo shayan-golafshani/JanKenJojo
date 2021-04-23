@@ -22,14 +22,14 @@ pale-purple: # C973A1 */
 html,
 body {width: 100vw;}
 
-
 .flex-column{
     display: flex;
     flex-direction: column;
 }
 
-.flew-row{
+.flex-row{
     display: flex;
+    flex-direction: row;
 }
 
 header {
@@ -41,7 +41,6 @@ header {
 }
 
 main {
-    display: flex;
     justify-content: space-around;
     background-color: #B34D84;
     height: 100vh;
