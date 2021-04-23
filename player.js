@@ -5,15 +5,20 @@ class Player{
 
     constructor(){
         //key-value pairs
-
-
+        this.wins = 0;
+        this.hand = {};
 
     }
 
     //methods
 
+    throwHandUser(){
 
+    }
 
+    throwHandComputer(){
+
+    }
 
 
 
