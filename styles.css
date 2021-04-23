@@ -3,18 +3,24 @@
 crying-trees-light-purp: #9974B0
 scarab-gold: #DEC173
 warm-scarf-Marooon: #B34D84
-pale-purple: # C973A1
-*/
+pale-purple: # C973A1 */
+
+:root {
+    --daphne-descends-purp: #684380;
+    --crying-trees-light-purp: #9974B0;
+    --scarab-gold: #DEC173;
+    --warm-scarf-Marooon: #B34D84;
+    --pale-purple: #C973A1;
+}
 
 * {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    border: 2px solid white;
+    border: 2px solid var(--scarab-gold);
 }
 
 html,
-body
-{width: 100vw;}
+body {width: 100vw;}
 
 
 .flex-column{
@@ -27,12 +33,11 @@ body
 }
 
 header {
-    /* height: 40%; */
     align-items: center;
     background-color: #684380;
     color: #DEC173;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 main {
@@ -54,6 +59,8 @@ main {
 
 .center {
  width: 60%;
+ align-items: center;
+ justify-content: space-around;
 }
 
 .game-one,
