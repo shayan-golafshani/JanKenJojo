@@ -16,7 +16,8 @@ pale-purple: # C973A1 */
 * {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    border: 2px solid var(--scarab-gold);
+    color: white;
+    /* border: 2px solid var(--scarab-gold); */
 }
 
 html,
@@ -46,14 +47,11 @@ main {
     height: 100vh;
 }
 
-.left-side{
-    width: 20%;
-    align-items: center;
-}
-
+.left-side,
 .right-side {
     width: 20%;
     align-items: center;
+    background-color: var(--crying-trees-light-purp);
 }
 
 .center {
@@ -70,15 +68,15 @@ main {
 
 .left-side > div,
 .right-side > div,　{
-    background-color: var(--crying-trees-light-purp);
     justify-content: space-between;
     align-items: center;
     height: 20%;
     width: 50%;
     margin-top: 10%;
+    font-size: 2em;
 }
 
-.jojo-text{
-    height: 250px;
-    width: 250px;
-}
+/* .jojo-text{
+    height: 130px;
+    width: 230px;
+} */
