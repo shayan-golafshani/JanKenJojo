@@ -55,3 +55,9 @@ main {
 .center {
  width: 60%;
 }
+
+.game-one,
+.game-two {
+    height: 30%;
+    width: 20%;
+}
