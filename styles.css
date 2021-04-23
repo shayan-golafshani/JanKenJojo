@@ -1,3 +1,13 @@
+/* Colors add here 
+ Daphne-descends purp:  #684380
+crying-trees-light-purp: #9974B0
+scarab-gold: #DEC173
+warm-scarf-Marooon: #B34D84
+pale-purple: # C973A1
+
+
+*/
+
 * {
     margin:  0;
     padding: 0;
@@ -10,4 +20,14 @@
 
 .flew-row{
     display: flex;
+}
+
+header {
+    height: 40%;
+    align-items: center;
+    background-color: #DEC173;
+}
+
+main {
+    height: 60%;
 }
