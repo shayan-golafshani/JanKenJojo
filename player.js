@@ -6,7 +6,8 @@ class Player{
     constructor(){
         //key-value pairs
         this.wins = 0;
-        this.hand = {};
+        this.handUser = 0;
+        this.handComputer = 0;
 
     }
 
@@ -16,11 +17,15 @@ class Player{
     }
 
     throwHandComputer(){
-        
+
     }
 
-    playGame(){
+    playClassic(){
 
+    }
+
+    playRockPaperScissorsSpock(){
+        
     }
 
 /* 
