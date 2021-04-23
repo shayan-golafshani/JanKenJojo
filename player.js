@@ -11,16 +11,29 @@ class Player{
     }
 
     //methods
-
-    throwHandUser(){
+    throwHandUser(userClickedImg){
 
     }
 
     throwHandComputer(){
+        
+    }
+
+    playGame(){
 
     }
 
+/* 
+Spock beats scissors and rock, but loses to paper and lizard.
 
+Lizard beats Spock and paper, but loses to rock and scissors.
+
+Rock beats scissors and lizard, but loses to paper and Spock.
+
+Paper beats rock and Spock, but loses to scissors and lizard.
+
+Scissors beats paper and lizard, but loses to rock and Spock.
+*/
 
 
 }
