@@ -67,3 +67,11 @@ main {
     height: 30%;
     width: 20%;
 }
+
+.left-side > div,
+.right-side > div　{
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    width: 50%;
+}
