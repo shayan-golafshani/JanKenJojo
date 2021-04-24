@@ -17,10 +17,8 @@ class Player{
 
     retrieveWinsFromStorage(){
         if(this.name === 'Hero'){
-            //localStorage.setItem('heroWins', this.wins);
             return localStorage.getItem('heroWins');
         } else if (this.name === 'Enemy'){
-            //localStorage.setItem('enemyWins', this.wins);
             return localStorage.getItem('enemyWins');
         } else {
             console.log('Error: cant retrieve wins based on playerName.');
