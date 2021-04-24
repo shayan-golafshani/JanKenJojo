@@ -5,7 +5,7 @@ var jojoGame = document.querySelector('.game-two');
 
 //fighter query selectors
 var rockFighter = document.querySelector('#rockFighter');
-var paperFighter = document.querySelector('#paperFighter"');
+var paperFighter = document.querySelector('#paperFighter');
 var scissorsFighter = document.querySelector('#scissorsFighter');
 
 var dioFighter = document.querySelector('#dioFighter');
@@ -22,6 +22,12 @@ changeGameBtn.addEventListener('click', function(e){
 });
 classicGame.addEventListener('click', someFunction);
 jojoGame.addEventListener('click', someFunction);
+
+rockFighter.addEventListener('click', someFunction);
+paperFighter.addEventListener('click', someFunction);
+scissorsFighter.addEventListener('click', someFunction);
+
+
 
 function someFunction(){
 console.log('Im working!!!!')
