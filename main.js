@@ -1,7 +1,8 @@
 //querySelectors
 var changeGameBtn = document.querySelector('#changeGameBtn');
 var classicGame = document.querySelector('.game-one');
-var jojoGane = document.querySelector('.game-two')
+var jojoGame = document.querySelector('.game-two');
+//add query selectors for all your sets of fighters!
 
 //Event listeners
 changeGameBtn.addEventListener('click', function(e){
@@ -9,8 +10,10 @@ changeGameBtn.addEventListener('click', function(e){
     someFunction();
 });
 classicGame.addEventListener('click', someFunction);
-jojoGane.addEventListener('click', someFunction);
+jojoGame.addEventListener('click', someFunction);
 
 function someFunction(){
 console.log('Im working!!!!')
 }
+
+//add random button generator
