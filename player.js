@@ -24,13 +24,11 @@ class Player{
             console.log('Error: cant retrieve wins based on playerName.');
         }
     }
-
-    takeTurn(player){
-        this.name === 'Hero' ? this.token = '🕵🏻' : this.token = '🦹🏼';
-        //return something maybe you want to update the score
-        //update the gameboard, and reset it so that users can play again
-        //maybe you want to update the data model
-        //so that I can then manipulate the dom from main.js 
-    }
-
+    // takeTurn(player){
+    //     this.name === 'Hero' ? this.token = '🕵🏻' : this.token = '🦹🏼';
+    //     //return something maybe you want to update the score
+    //     //update the gameboard, and reset it so that users can play again
+    //     //maybe you want to update the data model
+    //     //so that I can then manipulate the dom from main.js 
+    // }
 }

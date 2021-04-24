@@ -9,7 +9,7 @@
 <body>
     <header class="flex-column">
         <h1>Jan-Ken-JoJo</h1><br>
-        <h2>Choose your game!</h2>
+        <h2 id="instructionsText">Choose your game!</h2>
     </header>
     <main class="main flex-row">
         <section class="left-side flex-column">
@@ -28,7 +28,7 @@
                 <p>Scissors > Paper</p>
                 <p>Paper > Rock</p>
             </section>
-            <section class="rock-paper-scissors-fighters flex-row hidden">
+            <section class="rock-paper-scissors-fighters flex-row hidden" id="classicFighters">
                 <img src="/assets/rock.png" alt="rock" id="rockFighter">
                 <img src="/assets/paper.png" alt="paper" id="paperFighter">
                 <img src="/assets/scissors.png" alt="scissors" id="scissorsFighter">
@@ -60,6 +60,7 @@
             </div>
         </section>
     </main>
+    <script src="game.js"></script>
     <script src="player.js"></script>
     <script src="main.js"></script>
 </body>

@@ -4,6 +4,8 @@ var classicGame = document.querySelector('.game-one');
 var jojoGame = document.querySelector('.game-two');
 
 //fighter query selectors
+var classicFighters = document.querySelector('#classicFighters');
+
 var rockFighter = document.querySelector('#rockFighter');
 var paperFighter = document.querySelector('#paperFighter');
 var scissorsFighter = document.querySelector('#scissorsFighter');
@@ -13,7 +15,14 @@ var josukeFighter = document.querySelector('#josukeFighter');
 var jotaroFighter = document.querySelector('#jotaroFighter');
 var kiraFighter = document.querySelector('#kiraFighter');
 var koichiFighter = document.querySelector('#koichiFighter');
+
+var instructionsText = document.querySelector('#instructionsText');
 //add query selectors for all your sets of fighters!
+
+var game1arr = ["Rock", "Paper", "Scissors"];
+var game2arr = ["Dio", "Kira", "Josuke", "Jotaro", "Koichi"];
+
+var game;
 
 //Event listeners
 changeGameBtn.addEventListener('click', function(e){
@@ -22,10 +31,27 @@ changeGameBtn.addEventListener('click', function(e){
 });
 
 //tested all selectors
-classicGame.addEventListener('click', someFunction);
-jojoGame.addEventListener('click', someFunction);
+classicGame.addEventListener('click', function(e){
+  hide(classicGame);
+  hide(jojoGame);
+  show(classicFighters);
+  instructionsText.innerText = 'Choose your fighter!'
+  game = new Game();
+});
 
-rockFighter.addEventListener('click', someFunction);
+jojoGame.addEventListener('click', function(e){
+  hide(classicGame);
+  hide(jojoGame);
+  //need selector for jojo fighters
+  //show(jojoFighters);
+  instructionsText.innerText = 'Choose your fighter!'
+  game = new Game();
+});
+
+rockFighter.addEventListener('click', function(e){
+  game.findWinner(e);
+  console.log(e.target.id)
+});
 paperFighter.addEventListener('click', someFunction);
 scissorsFighter.addEventListener('click', someFunction);
 
