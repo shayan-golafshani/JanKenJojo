@@ -10,13 +10,9 @@
 class Game {
 
     constructor(gameType){
-        //key-value pairs
         this.player = new Player('Hero');
         this.computerEnemy = new Player('Enemy');
         this.gameType = this.gameType || 'classic';
-
-
-
     }
 
     //methods
@@ -26,7 +22,6 @@ class Game {
     }
 
     storeWins(){
-        //may or may not want to add in a key to save the wins under
         this.player.saveWinsToStorage();
         this.computerEnemy.saveWinsToStorage();
     }
@@ -37,9 +32,12 @@ class Game {
         var computerMove = this.computerEnemy.takeTurn();
 
         //consider using a switch-statement
-        if()
+        //if()
     }
 
+    resetGame(){
+        this.retrieveWins();
+    }
 
     
 
