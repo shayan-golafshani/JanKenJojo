@@ -20,12 +20,14 @@ changeGameBtn.addEventListener('click', function(e){
     e.preventDefault();
     someFunction();
 });
+
+//tested all selectors
 classicGame.addEventListener('click', someFunction);
 jojoGame.addEventListener('click', someFunction);
 
-// rockFighter.addEventListener('click', someFunction);
-// paperFighter.addEventListener('click', someFunction);
-// scissorsFighter.addEventListener('click', someFunction);
+rockFighter.addEventListener('click', someFunction);
+paperFighter.addEventListener('click', someFunction);
+scissorsFighter.addEventListener('click', someFunction);
 
 dioFighter.addEventListener('click', someFunction);
 josukeFighter.addEventListener('click', someFunction);
