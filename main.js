@@ -28,6 +28,10 @@ console.log('Im working!!!!')
 }
 
 //add random button generator
+//1-3 for normal game, 1-5 for jojo game
+function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 
 //functions to hide and toggle elements
 function toggle(elem) {
