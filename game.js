@@ -12,6 +12,7 @@ class Game {
         this.player = new Player('Hero');
         this.computerEnemy = new Player('Enemy');
         this.gameType = this.gameType || 'classic';
+        this.isDraw = false;
     }
 
     //methods
@@ -27,22 +28,20 @@ class Game {
 
 
     findWinner(){
+        //update this isDraw;
         var userMove = this.player.takeTurn();
         var computerMove = this.computerEnemy.takeTurn();
-
+        if(userMove === computerMove){
+            this.isDraw = true;
+            //do something else here;
+        }
         //consider using a switch-statement
         //if()
     }
 
-    changeGame(){
 
-    }
-
-    resetGame(){
+    resetGame(gameType){
         setTimeout()
         this.retrieveWins();
     }
-
-    
-
 }
