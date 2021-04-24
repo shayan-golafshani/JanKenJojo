@@ -9,18 +9,38 @@
 
 class Game {
 
-    constructor(){
+    constructor(gameType){
         //key-value pairs
+        this.player = new Player('Hero');
+        this.computerEnemy = new Player('Enemy');
+        this.gameType = this.gameType || 'classic';
 
 
 
     }
 
     //methods
+    retrieveWins(){
+        var playerWins = this.player.retrieveWinsFromStorage();
+        var computerWins = this.computerEnemy.retrieveWinsFromStorage();
+    }
+
+    storeWins(){
+        //may or may not want to add in a key to save the wins under
+        this.player.saveWinsToStorage();
+        this.computerEnemy.saveWinsToStorage();
+    }
+
+
+    compareFighters(){
+        var userMove = this.player.takeTurn();
+        var computerMove = this.computerEnemy.takeTurn();
+
+        //consider using a switch-statement
+        if()
+    }
 
 
     
 
 }
-
-module.exports = Game;

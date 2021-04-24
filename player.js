@@ -5,12 +5,10 @@ class Player{
 
     constructor(name){
         //key-value pairs
-        this.name = 'Fighter';
-        this.token = '🕵🏻';
+        this.name = this.name;
+        this.token = '🕵🏻' || '🙀';
         this.wins = 0;
-        this.handUser = 0;
-        this.handComputer = 0;
-
+        
     }
 
     /*
