@@ -5,7 +5,8 @@ class Player{
 
     constructor(name){
         //key-value pairs
-        this.name = name || 'Fighter';
+        this.name = 'Fighter';
+        this.token = '🕵🏻';
         this.wins = 0;
         this.handUser = 0;
         this.handComputer = 0;
@@ -19,22 +20,35 @@ class Player{
     takeTurn
     */
 
-    //methods
-    throwHandUser(userClickedImg){
+    saveWinsToStorage(){
+        localStorage.setItem('wins', this.wins);
+    }
+
+    retrieveWinsFromStorage(){
+        return localStorage.getItem('wins');
+    }
+
+    takeTurn(player){
 
     }
 
-    throwHandComputer(){
 
-    }
+    // //methods
+    // throwHandUser(userClickedImg){
 
-    playClassic(){
+    // }
 
-    }
+    // throwHandComputer(){
 
-    playRockPaperScissorsSpock(){
+    // }
 
-    }
+    // playClassic(){
+
+    // }
+
+    // playRockPaperScissorsSpock(){
+
+    // }
 
 /* 
 Spock beats scissors and rock, but loses to paper and lizard.
