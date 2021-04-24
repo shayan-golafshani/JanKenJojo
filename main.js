@@ -28,3 +28,16 @@ console.log('Im working!!!!')
 }
 
 //add random button generator
+
+//functions to hide and toggle elements
+function toggle(elem) {
+    elem.classList.toggle('hidden');
+  }
+  
+  function hide(elem) {
+    elem.classList.add('hidden');
+  }
+  
+  function show(elem) {
+    elem.classList.remove('hidden');
+  }
