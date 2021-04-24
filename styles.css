@@ -74,6 +74,34 @@ main {
     font-size: 2em;
 }
 
+.change-game-btn {
+    margin-top: 10%;
+    border-radius: 10px;
+    background-color: var(--daphne-descends-purp);
+    color: var(--scarab-gold);
+    border: transparent;
+    padding: .5rem;
+}
+.change-game-btn:hover{
+    background-color: var(--scarab-gold);
+    color: black;
+}
+
+.rock-paper-scissors-fighters >img {
+    width: 30%;
+}
+
+.rock-paper-scissors-fighters {
+    justify-content: space-between;
+}
+
+.stand-fighters >img {
+    max-height: fit-content;
+    width: 20%;
+}
+
+
+
 .hidden{
     display: none;
 }
