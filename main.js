@@ -1,5 +1,5 @@
 //querySelectors
-var changeGameBtn = document.querySelector('.changeGameBtn');
+var changeGameBtn = document.querySelector('#changeGameBtn');
 var classicGame = document.querySelector('.game-one');
 var jojoGane = document.querySelector('.game-two')
 

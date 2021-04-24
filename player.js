@@ -50,5 +50,3 @@ Scissors beats paper and lizard, but loses to rock and Spock.
 
 
 }
-
-module.exports = Player
