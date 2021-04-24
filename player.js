@@ -1,22 +1,9 @@
 class Player{
-
-    //one instance is a computer the other is a player maybe we can base
-    //if off a boolean value that's passed into the constructor
-
     constructor(name){
-        //key-value pairs
         this.name = this.name;
-        this.token = '🕵🏻' || '🙀';
+        this.token = '🙀';
         this.wins = 0;
-        
     }
-
-    /*
-    constructor - properties should include: name (ex: 'hannah'), token (ex: '⭐️'), wins (ex: 0)
-    saveWinsToStorage
-    retrieveWinsFromStorage
-    takeTurn
-    */
 
     saveWinsToStorage(){
         if(this.name === 'Hero'){
@@ -41,38 +28,11 @@ class Player{
     }
 
     takeTurn(player){
-
+        this.name === 'Hero' ? this.token = '🕵🏻' : this.token = '🦹🏼';
+        //return something maybe you want to update the score
+        //update the gameboard, and reset it so that users can play again
+        //maybe you want to update the data model
+        //so that I can then manipulate the dom from main.js 
     }
-
-
-    // //methods
-    // throwHandUser(userClickedImg){
-
-    // }
-
-    // throwHandComputer(){
-
-    // }
-
-    // playClassic(){
-
-    // }
-
-    // playRockPaperScissorsSpock(){
-
-    // }
-
-/* 
-Spock beats scissors and rock, but loses to paper and lizard.
-
-Lizard beats Spock and paper, but loses to rock and scissors.
-
-Rock beats scissors and lizard, but loses to paper and Spock.
-
-Paper beats rock and Spock, but loses to scissors and lizard.
-
-Scissors beats paper and lizard, but loses to rock and Spock.
-*/
-
 
 }
