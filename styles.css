@@ -1,4 +1,79 @@
+:root {
+    --daphne-descends-purp: #684380;
+    --crying-trees-light-purp: #9974B0;
+    --scarab-gold: #DEC173;
+    --warm-scarf-Marooon: #B34D84;
+    --pale-purple: #C973A1;
+}
+
 * {
-    margin:  0;
-    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+html,
+body {width: 100vw;}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+header {
+    align-items: center;
+    background-color: var(--daphne-descends-purp);
+    color: var(--scarab-gold);
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+header > h1, h2 {
+    color: var(--scarab-gold);
+}
+
+main {
+    justify-content: space-around;
+    background-color: #B34D84;
+    height: 100vh;
+}
+
+.left-side,
+.right-side {
+    width: 20%;
+    align-items: center;
+    background-color: var(--crying-trees-light-purp);
+}
+
+.center {
+ width: 60%;
+ align-items: center;
+ justify-content: space-around;
+}
+
+.game-one,
+.game-two {
+    text-align: center;
+    height: 30%;
+    width: 60%;
+    background-color: var(--pale-purple);
+}
+
+.left-side > div,
+.right-side > div,　{
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+    width: 50%;
+    margin-top: 7%;
+    font-size: 2em;
+}
+
+.hidden{
+    display: none;
 }
