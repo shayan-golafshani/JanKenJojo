@@ -23,11 +23,15 @@ changeGameBtn.addEventListener('click', function(e){
 classicGame.addEventListener('click', someFunction);
 jojoGame.addEventListener('click', someFunction);
 
-rockFighter.addEventListener('click', someFunction);
-paperFighter.addEventListener('click', someFunction);
-scissorsFighter.addEventListener('click', someFunction);
+// rockFighter.addEventListener('click', someFunction);
+// paperFighter.addEventListener('click', someFunction);
+// scissorsFighter.addEventListener('click', someFunction);
 
-
+dioFighter.addEventListener('click', someFunction);
+josukeFighter.addEventListener('click', someFunction);
+jotaroFighter.addEventListener('click', someFunction);
+kiraFighter.addEventListener('click', someFunction);
+koichiFighter.addEventListener('click', someFunction);
 
 function someFunction(){
 console.log('Im working!!!!')
