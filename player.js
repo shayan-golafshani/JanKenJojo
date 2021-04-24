@@ -19,7 +19,14 @@ class Player{
     */
 
     saveWinsToStorage(){
-        localStorage.setItem('wins', this.wins);
+        if(this.name === 'Hero'){
+            localStorage.setItem('heroWins', this.wins);
+        } else if (this.name === 'Enemy'){
+            localStorage.setItem('enemyWins', this.wins);
+        } else {
+            console.log('Error: cant save wins based on playerName.');
+        }
+        
     }
 
     retrieveWinsFromStorage(){
