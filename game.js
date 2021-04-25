@@ -30,7 +30,6 @@ class Game {
 
     findWinner(event){
         this.isDraw = false;
-        // debugger;
         var userMove = event.target.id;
         var computerMove = this.computerWeapon;
         var img1path = getImagePath1(userMove);
@@ -86,7 +85,6 @@ class Game {
             <img src="/assets/${img2path}.png" alt="compChoice" id=""> 
         `
 
-    
         if(this.gameType !== 'classic'){
             computerMove = game2arr[randomInt(0,4)];
             img1path = getImagePath1(userMove);
@@ -96,9 +94,6 @@ class Game {
                 <img src="/assets/${img2path}-char.png" alt="compChoice" id=""> 
             `
 
-            //do jojo logic here
-
-            //start jojo logic
             if(userMove === "koichiFighter" && computerMove === "Koichi" ||
         userMove === "kiraFighter" && computerMove === "Kira" ||
         userMove === "jotaroFighter" && computerMove === "Jotaro" ||
@@ -109,9 +104,6 @@ class Game {
             return false;
         }
 
-        // if(userMove === "rockFighter" && computerMove === "Scissors" ||
-        //     userMove === "paperFighter" && computerMove === "Rock" ||
-        //     userMove === "scissorsFighter" && computerMove === "Paper") 
         if(userMove === "koichiFighter" && (computerMove === "Jotaro"||computerMove === "Kira" )||
         userMove === "kiraFighter" && (computerMove === "Jotaro"||computerMove === "Dio" )||
         userMove === "jotaroFighter" && (computerMove === "Josuke"||computerMove === "Dio" )||
@@ -128,8 +120,7 @@ class Game {
                 return false;
             }
         }
-    
-    
+        //normal game logic
         //check for draw
         if(userMove === "rockFighter" && computerMove === "Rock" ||
         userMove === "paperFighter" && computerMove === "Paper" ||
@@ -156,8 +147,6 @@ class Game {
 
 
     resetGame(gameType){
-        
-        //function
         this.retrieveWins();
         setTimeout();
     }
