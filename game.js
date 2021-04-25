@@ -20,6 +20,11 @@ class Game {
     retrieveWins(){
         var playerWins = this.player.retrieveWinsFromStorage();
         var computerWins = this.computerEnemy.retrieveWinsFromStorage();
+        var wins = {
+            playerWins : this.playerWins,
+            computerWins : this.computerWins 
+        };
+        return wins;
     }
 
     storeWins(){
@@ -146,8 +151,23 @@ class Game {
     }
 
 
-    resetGame(gameType){
+    resetGame(){
         this.retrieveWins();
-        setTimeout();
+        //debugger;
+  setTimeout(function(){
+    if(game.gameType === 'classic'){
+        hide(comparisonArea);
+        hide(selectionTokens);
+        hide(outcomeText);
+        show(classicFighters);
+        game = new Game();
+    } else {
+        hide(comparisonArea);
+        hide(selectionTokens);
+        hide(outcomeText);
+        show(jojoFighters);
+        game = new Game('Jojo');
+    }
+        }, 2000);
     }
 }

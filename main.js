@@ -84,6 +84,7 @@ function playClassicGame(e){
   var choices = function (){
     show(comparisonArea);
     show(selectionTokens);
+    game.resetGame();
   }
   setTimeout(choices, 1200)
   //need to save wins to local storage
@@ -110,6 +111,7 @@ function playJojoGame(e){
   var choices = function (){
     show(comparisonArea);
     show(selectionTokens);
+    game.resetGame();
   }
   setTimeout(choices, 1200)
   //need to save wins to local storage
