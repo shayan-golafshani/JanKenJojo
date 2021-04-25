@@ -5,6 +5,7 @@ var jojoGame = document.querySelector('.game-two');
 
 //fighter query selectors
 var classicFighters = document.querySelector('#classicFighters');
+var jojoFighters = document.querySelector('.stand-fighters');
 
 var rockFighter = document.querySelector('#rockFighter');
 var paperFighter = document.querySelector('#paperFighter');
@@ -47,14 +48,12 @@ classicGame.addEventListener('click', function(e){
 jojoGame.addEventListener('click', function(e){
   hide(classicGame);
   hide(jojoGame);
-  //need selector for jojo fighters
-  //show(jojoFighters);
-  instructionsText.innerText = 'Choose your fighter!'
+  show(jojoFighters);
+  instructionsText.innerText = 'Choose your stand fighter!'
   game = new Game('Jojo');
 });
 
 rockFighter.addEventListener('click', function(e){
-  //debugger;
   playClassicGame(e);
 });
 
@@ -65,15 +64,50 @@ paperFighter.addEventListener('click', function(e){
 scissorsFighter.addEventListener('click', function(e){
 playClassicGame(e);
 });
-
-dioFighter.addEventListener('click', someFunction);
-josukeFighter.addEventListener('click', someFunction);
-jotaroFighter.addEventListener('click', someFunction);
-kiraFighter.addEventListener('click', someFunction);
-koichiFighter.addEventListener('click', someFunction);
+//working here
+dioFighter.addEventListener('click', function(e){
+  playJojoGame(e);
+  });
+josukeFighter.addEventListener('click', function(e){
+  playJojoGame(e);
+  });
+jotaroFighter.addEventListener('click', function(e){
+  playJojoGame(e);
+  });
+kiraFighter.addEventListener('click', function(e){
+  playJojoGame(e);
+  });
+koichiFighter.addEventListener('click', function(e){
+  playJojoGame(e);
+  });
 
 function playClassicGame(e){
   hide(classicFighters);
+  var outcomeOfMatch = game.findWinner(e);
+  if(outcomeOfMatch) {
+    outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"
+    heroWins.innerText = game.player.wins;  
+  } else if(game.isDraw) {
+    outcomeText.innerText = "You tied 🙀"  
+  } else {
+    outcomeText.innerText = "The enemy beat you 💉"
+    enemyWins.innerText = game.computerEnemy.wins;
+  }
+  show(outcomeText);
+  //was working here at 11:54 PM last night
+  var choices = function (){
+    show(comparisonArea);
+    show(selectionTokens);
+  }
+  setTimeout(choices, 2000)
+  //need to save wins to local storage
+  //clear board or restart it. 
+  //show the change game button babes
+}
+
+//duplicate function here clear it up
+function playJojoGame(e){
+  hide(jojoFighters);
   var outcomeOfMatch = game.findWinner(e);
   if(outcomeOfMatch) {
     outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"
