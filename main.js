@@ -33,7 +33,10 @@ var game;
 //Event listeners
 changeGameBtn.addEventListener('click', function(e){
     e.preventDefault();
-    someFunction();
+    location.reload();
+    //reset the game via method in game.js
+    //update wins from local storage
+    //update DOM
 });
 
 //tested all selectors
@@ -76,6 +79,7 @@ function playClassicGame(e){
     enemyWins.innerText = game.computerEnemy.wins;
   }
   show(outcomeText);
+  show(changeGameBtn);
   //was working here at 11:54 PM last night
   var choices = function (){
     show(comparisonArea);
@@ -101,6 +105,7 @@ function playJojoGame(e){
     enemyWins.innerText = game.computerEnemy.wins;
   }
   show(outcomeText);
+  show(changeGameBtn);
   //was working here at 11:54 PM last night
   var choices = function (){
     show(comparisonArea);
