@@ -18,6 +18,8 @@ var koichiFighter = document.querySelector('#koichiFighter');
 
 var instructionsText = document.querySelector('#instructionsText');
 var outcomeText = document.getElementById('outcome');
+var heroWins = document.getElementById('heroWins');
+var enemyWins = document.getElementById('enemyWins');
 //add query selectors for all your sets of fighters!
 
 var game1arr = ["Rock", "Paper", "Scissors"];
@@ -50,40 +52,15 @@ jojoGame.addEventListener('click', function(e){
 });
 
 rockFighter.addEventListener('click', function(e){
-  var outcomeOfMatch = game.findWinner(e);
-  if(outcomeOfMatch) {
-    outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"  
-  } else if(game.isDraw) {
-    outcomeText.innerText = "You tied 🙀"  
-  } else {
-    outcomeText.innerText = "The enemy beat you 💉"
-  }
-  show(outcomeText);
-  //console.log(e.target.id)
+  playClassicGame(e);
 });
+
 paperFighter.addEventListener('click', function(e){
-  var outcomeOfMatch = game.findWinner(e);
-  if(outcomeOfMatch) {
-    outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"  
-  } else if(game.isDraw) {
-    outcomeText.innerText = "You tied 🙀"  
-  } else {
-    outcomeText.innerText = "The enemy beat you 💉"
-  }
-  show(outcomeText);
-  //console.log(e.target.id)
+  playClassicGame(e);
 });
+
 scissorsFighter.addEventListener('click', function(e){
-  var outcomeOfMatch = game.findWinner(e);
-  if(outcomeOfMatch) {
-    outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"  
-  } else if(game.isDraw) {
-    outcomeText.innerText = "You tied 🙀"  
-  } else {
-    outcomeText.innerText = "The enemy beat you 💉"
-  }
-  show(outcomeText);
-  //console.log(e.target.id)
+playClassicGame(e);
 });
 
 dioFighter.addEventListener('click', someFunction);
@@ -91,6 +68,21 @@ josukeFighter.addEventListener('click', someFunction);
 jotaroFighter.addEventListener('click', someFunction);
 kiraFighter.addEventListener('click', someFunction);
 koichiFighter.addEventListener('click', someFunction);
+
+function playClassicGame(e){
+  hide(classicFighters);
+  var outcomeOfMatch = game.findWinner(e);
+  if(outcomeOfMatch) {
+    outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"
+    heroWins.innerText = game.player.wins;  
+  } else if(game.isDraw) {
+    outcomeText.innerText = "You tied 🙀"  
+  } else {
+    outcomeText.innerText = "The enemy beat you 💉"
+    enemyWins.innerText = game.computerEnemy.wins;
+  }
+  show(outcomeText);
+}
 
 function someFunction(){
 console.log('Im working!!!!')

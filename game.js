@@ -29,6 +29,7 @@ class Game {
 
 
     findWinner(event){
+        this.isDraw = false;
         debugger;
         var userMove = event.target.id;
         var computerMove = this.computerWeapon;

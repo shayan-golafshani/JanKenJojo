@@ -1,6 +1,6 @@
 class Player{
     constructor(name){
-        this.name = this.name;
+        this.name = name;
         this.token = '🙀';
         this.wins = 0;
     }
