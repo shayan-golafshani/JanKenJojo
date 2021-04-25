@@ -53,33 +53,15 @@ jojoGame.addEventListener('click', function(e){
   game = new Game('Jojo');
 });
 
-rockFighter.addEventListener('click', function(e){
-  playClassicGame(e);
-});
+rockFighter.addEventListener('click', playClassicGame);
+paperFighter.addEventListener('click', playClassicGame);
+scissorsFighter.addEventListener('click', playClassicGame);
 
-paperFighter.addEventListener('click', function(e){
-  playClassicGame(e);
-});
-
-scissorsFighter.addEventListener('click', function(e){
-playClassicGame(e);
-});
-//working here
-dioFighter.addEventListener('click', function(e){
-  playJojoGame(e);
-  });
-josukeFighter.addEventListener('click', function(e){
-  playJojoGame(e);
-  });
-jotaroFighter.addEventListener('click', function(e){
-  playJojoGame(e);
-  });
-kiraFighter.addEventListener('click', function(e){
-  playJojoGame(e);
-  });
-koichiFighter.addEventListener('click', function(e){
-  playJojoGame(e);
-  });
+dioFighter.addEventListener('click', playJojoGame);
+josukeFighter.addEventListener('click', playJojoGame);
+jotaroFighter.addEventListener('click', playJojoGame);
+kiraFighter.addEventListener('click', playJojoGame);
+koichiFighter.addEventListener('click', playJojoGame);
 
 function playClassicGame(e){
   hide(classicFighters);
@@ -99,7 +81,7 @@ function playClassicGame(e){
     show(comparisonArea);
     show(selectionTokens);
   }
-  setTimeout(choices, 2000)
+  setTimeout(choices, 1200)
   //need to save wins to local storage
   //clear board or restart it. 
   //show the change game button babes
@@ -124,7 +106,7 @@ function playJojoGame(e){
     show(comparisonArea);
     show(selectionTokens);
   }
-  setTimeout(choices, 2000)
+  setTimeout(choices, 1200)
   //need to save wins to local storage
   //clear board or restart it. 
   //show the change game button babes
