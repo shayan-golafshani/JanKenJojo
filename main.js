@@ -20,6 +20,7 @@ var instructionsText = document.querySelector('#instructionsText');
 var outcomeText = document.getElementById('outcome');
 var heroWins = document.getElementById('heroWins');
 var enemyWins = document.getElementById('enemyWins');
+var comparisonArea = document.getElementById('userComputerComparison');
 //add query selectors for all your sets of fighters!
 
 var game1arr = ["Rock", "Paper", "Scissors"];

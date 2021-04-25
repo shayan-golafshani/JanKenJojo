@@ -109,6 +109,7 @@ a:hover, a:visited, a:link, a:active {
     color: black;
 }
 .user-computer-comparison {
+    /*was working here last nigth*/
     height: 20%;
     width: 60%;
     justify-content: center;
@@ -116,6 +117,13 @@ a:hover, a:visited, a:link, a:active {
 .user-computer-comparison > img {
     /*was working here last nigth*/
     width: 20%;
+}
+
+.show-selection {
+    width: 40%;
+    justify-content: space-evenly;
+    margin: 2rem;
+    font-size: larger;
 }
 
 .rock-paper-scissors-fighters >img {
