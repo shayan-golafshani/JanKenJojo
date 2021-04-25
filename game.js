@@ -30,9 +30,61 @@ class Game {
 
     findWinner(event){
         this.isDraw = false;
-        debugger;
+        // debugger;
         var userMove = event.target.id;
         var computerMove = this.computerWeapon;
+        var img1path = getImagePath1(userMove);
+        var img2path = getImagePath2(computerMove);
+
+        //check which image to display
+        function getImagePath1 (userMove){
+        if(userMove === "rockFighter"){
+            img1path = 'rock';
+        } else if (userMove === "paperFighter"){
+            img1path = 'paper';
+        } else if (userMove === "scissorsFighter"){
+            img1path = 'scissors';
+        } else if (userMove === "koichiFighter"){
+            img1path = 'koichi';
+        } else if (userMove === "kiraFighter"){
+            img1path = 'kira';
+        } else if (userMove === "jotaroFighter"){
+            img1path = 'jotaro';
+        } else if (userMove === "dioFighter"){
+            img1path = 'dio';
+        } else if (userMove === "josukeFighter"){
+            img1path = 'josuke';
+        } else {
+            console.log('Error: cant assign img file-path');
+        } return img1path;
+    }
+
+    function getImagePath2 (computerMove){
+        if(computerMove === "Rock"){
+            img2path = 'rock';
+        } else if (computerMove === "Paper"){
+            img2path = 'paper';
+        } else if (computerMove === "Scissors"){
+            img2path = 'scissors';
+        } else if (computerMove === "Koichi"){
+            img2path = 'koichi';
+        } else if (computerMove === "Kira"){
+            img2path = 'kira';
+        } else if (computerMove === "Jotaro"){
+            img2path = 'jotaro';
+        } else if (computerMove === "Dio"){
+            img2path = 'dio';
+        } else if (computerMove === "Josuke"){
+            img2path = 'josuke';
+        } else {
+            console.log('Error: cant assign img file-path');
+        } return img2path;
+    }
+    //update the area with the user's choices
+    comparisonArea.innerHTML = `
+        <img src="/assets/${img1path}.png" alt="userChoice" id=""> 
+        <img src="/assets/${img2path}.png" alt="compChoice" id=""> 
+        `
 
         if(this.gameType !== 'classic'){
             computerMove = game2arr[randomInt(0,4)];

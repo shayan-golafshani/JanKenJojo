@@ -21,6 +21,7 @@ var outcomeText = document.getElementById('outcome');
 var heroWins = document.getElementById('heroWins');
 var enemyWins = document.getElementById('enemyWins');
 var comparisonArea = document.getElementById('userComputerComparison');
+var selectionTokens = document.querySelector('.show-selection');
 //add query selectors for all your sets of fighters!
 
 var game1arr = ["Rock", "Paper", "Scissors"];
@@ -53,6 +54,7 @@ jojoGame.addEventListener('click', function(e){
 });
 
 rockFighter.addEventListener('click', function(e){
+  //debugger;
   playClassicGame(e);
 });
 
@@ -83,6 +85,12 @@ function playClassicGame(e){
     enemyWins.innerText = game.computerEnemy.wins;
   }
   show(outcomeText);
+  //was working here at 11:54 PM last night
+  var choices = function (){
+    show(comparisonArea);
+    show(selectionTokens);
+  }
+  setTimeout(choices, 2000)
 }
 
 function someFunction(){
