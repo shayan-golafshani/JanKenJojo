@@ -27,27 +27,16 @@ var selectionTokens = document.querySelector('.show-selection');
 
 var game1arr = ["Rock", "Paper", "Scissors"];
 var game2arr = ["Dio", "Kira", "Josuke", "Jotaro", "Koichi"];
-
 var game;
 
 //Event listeners
 window.onload = function(){
-
   heroWins.innerText = localStorage.getItem('heroWins') || '0';
   enemyWins.innerText = localStorage.getItem('enemyWins') || '0';
 };
 
-changeGameBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    location.reload();
-    heroWins.innerText = localStorage.getItem('heroWins');
-    enemyWins.innerText = localStorage.getItem('enemyWins');
-    //reset the game via method in game.js
-    //update wins from local storage
-    //update DOM
-});
+changeGameBtn.addEventListener('click', function(){ location.reload()});
 
-//tested all selectors
 classicGame.addEventListener('click', function(e){
   hide(classicGame);
   hide(jojoGame);
@@ -67,7 +56,6 @@ jojoGame.addEventListener('click', function(e){
 rockFighter.addEventListener('click', playClassicGame);
 paperFighter.addEventListener('click', playClassicGame);
 scissorsFighter.addEventListener('click', playClassicGame);
-
 dioFighter.addEventListener('click', playJojoGame);
 josukeFighter.addEventListener('click', playJojoGame);
 jotaroFighter.addEventListener('click', playJojoGame);
@@ -88,19 +76,14 @@ function playClassicGame(e){
   }
   show(outcomeText);
   show(changeGameBtn);
-  //was working here at 11:54 PM last night
   var choices = function (){
     show(comparisonArea);
     show(selectionTokens);
     game.resetGame();
   }
-  setTimeout(choices, 1200)
-  //need to save wins to local storage
-  //clear board or restart it. 
-  //show the change game button babes
+  setTimeout(choices, 1000)
 }
 
-//duplicate function here clear it up
 function playJojoGame(e){
   hide(jojoFighters);
   var outcomeOfMatch = game.findWinner(e);
@@ -115,16 +98,12 @@ function playJojoGame(e){
   }
   show(outcomeText);
   show(changeGameBtn);
-  //was working here at 11:54 PM last night
   var choices = function (){
     show(comparisonArea);
     show(selectionTokens);
     game.resetGame();
   }
-  setTimeout(choices, 1200)
-  //need to save wins to local storage
-  //clear board or restart it. 
-  //show the change game button babes
+  setTimeout(choices, 1000)
 }
 
 function randomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min}
