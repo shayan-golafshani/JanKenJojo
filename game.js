@@ -18,6 +18,8 @@ class Game {
 
     //methods
     retrieveWins(){
+        // debugger;
+        console.log(this);
         var playerWins = this.player.retrieveWinsFromStorage();
         var computerWins = this.computerEnemy.retrieveWinsFromStorage();
         var wins = {
@@ -34,6 +36,9 @@ class Game {
 
 
     findWinner(event){
+        this.player.wins = this.player.retrieveWinsFromStorage();
+        this.computerEnemy.wins = this.computerEnemy.retrieveWinsFromStorage();
+
         this.isDraw = false;
         var userMove = event.target.id;
         var computerMove = this.computerWeapon;
@@ -114,6 +119,7 @@ class Game {
         userMove === "jotaroFighter" && (computerMove === "Josuke"||computerMove === "Dio" )||
         userMove === "dioFighter" && (computerMove === "Josuke"||computerMove === "Koichi" )||
         userMove === "josukeFighter" && (computerMove === "Kira"||computerMove === "Koichi" )) {
+
                 this.player.wins++;
                 this.player.saveWinsToStorage();
                 console.log(`You're a winner`);
@@ -152,7 +158,7 @@ class Game {
 
 
     resetGame(){
-        this.retrieveWins();
+        var totalWins = this.retrieveWins();
         //debugger;
   setTimeout(function(){
     if(game.gameType === 'classic'){
@@ -160,13 +166,15 @@ class Game {
         hide(selectionTokens);
         hide(outcomeText);
         show(classicFighters);
-        game = new Game();
+        //make new game and make sure the wins carry over
+        game.computerWeapon = game1arr[randomInt(0, 2)];
     } else {
         hide(comparisonArea);
         hide(selectionTokens);
         hide(outcomeText);
         show(jojoFighters);
-        game = new Game('Jojo');
+        //make new game and make sure the wins carry over
+        game.computerWeapon = game2arr[randomInt(0, 4)];
     }
         }, 2000);
     }

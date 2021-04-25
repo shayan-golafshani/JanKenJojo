@@ -31,9 +31,17 @@ var game2arr = ["Dio", "Kira", "Josuke", "Jotaro", "Koichi"];
 var game;
 
 //Event listeners
+window.onload = function(){
+
+  heroWins.innerText = localStorage.getItem('heroWins') || '0';
+  enemyWins.innerText = localStorage.getItem('enemyWins') || '0';
+};
+
 changeGameBtn.addEventListener('click', function(e){
     e.preventDefault();
     location.reload();
+    heroWins.innerText = localStorage.getItem('heroWins');
+    enemyWins.innerText = localStorage.getItem('enemyWins');
     //reset the game via method in game.js
     //update wins from local storage
     //update DOM
@@ -71,12 +79,12 @@ function playClassicGame(e){
   var outcomeOfMatch = game.findWinner(e);
   if(outcomeOfMatch) {
     outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"
-    heroWins.innerText = game.player.wins;  
+    heroWins.innerText = game.player.retrieveWinsFromStorage();  
   } else if(game.isDraw) {
     outcomeText.innerText = "You tied 🙀"  
   } else {
     outcomeText.innerText = "The enemy beat you 💉"
-    enemyWins.innerText = game.computerEnemy.wins;
+    enemyWins.innerText = game.computerEnemy.retrieveWinsFromStorage();
   }
   show(outcomeText);
   show(changeGameBtn);
@@ -98,12 +106,12 @@ function playJojoGame(e){
   var outcomeOfMatch = game.findWinner(e);
   if(outcomeOfMatch) {
     outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"
-    heroWins.innerText = game.player.wins;  
+    heroWins.innerText = game.player.retrieveWinsFromStorage();  
   } else if(game.isDraw) {
     outcomeText.innerText = "You tied 🙀"  
   } else {
     outcomeText.innerText = "The enemy beat you 💉"
-    enemyWins.innerText = game.computerEnemy.wins;
+    enemyWins.innerText = game.computerEnemy.retrieveWinsFromStorage();
   }
   show(outcomeText);
   show(changeGameBtn);
@@ -119,25 +127,8 @@ function playJojoGame(e){
   //show the change game button babes
 }
 
-function someFunction(){
-console.log('Im working!!!!')
-}
+function randomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min}
 
-//add random button generator
-//1-3 for normal game, 1-5 for jojo game
-function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-//functions to hide and toggle elements
-function toggle(elem) {
-    elem.classList.toggle('hidden');
-  }
+function hide(elem) {elem.classList.add('hidden')}
   
-  function hide(elem) {
-    elem.classList.add('hidden');
-  }
-  
-  function show(elem) {
-    elem.classList.remove('hidden');
-  }
+function show(elem) {elem.classList.remove('hidden')}
