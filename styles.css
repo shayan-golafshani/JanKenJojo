@@ -9,7 +9,7 @@
 * {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    /* color: white; */
+    border: 2px solid white;
 }
 
 html,
@@ -107,6 +107,15 @@ a:hover, a:visited, a:link, a:active {
 .change-game-btn:hover{
     background-color: var(--scarab-gold);
     color: black;
+}
+.user-computer-comparison {
+    height: 20%;
+    width: 60%;
+    justify-content: center;
+}
+.user-computer-comparison > img {
+    /*was working here last nigth*/
+    width: 20%;
 }
 
 .rock-paper-scissors-fighters >img {
