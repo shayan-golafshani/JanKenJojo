@@ -8,37 +8,68 @@
 <body>
     <header class="flex-column">
         <h1>Jan-Ken-JoJo</h1><br>
-        <h2>Choose your game!</h2>
-        <!-- change this h2 text when you change the game  -->
+        <h2 id="instructionsText">Choose your game!</h2>
     </header>
     <main class="main flex-row">
         <section class="left-side flex-column">
             <div class="flex-column">
                 <p>🕵🏻</p>
                 <p>Hero</p>
-                <p>Wins: 0</p>
+                <p id="heroWins">0</p>
+                <p>Wins</p>
             </div>
-            <!-- <img class="jojo-text" src="/assets/jojo-text.png"> -->
+            <button class="change-game-btn hidden" id="changeGameBtn">Change Games</button>
         </section>
         <section class="center flex-column">
+            <h2 class="outcome hidden" id="outcome">OUTCOME OF YOUR MATCH BITCH</h2>
+            <section class="user-computer-comparison flex-row hidden" id="userComputerComparison">
+                <img src="/assets/paper.png" alt="userChoice" id=""> 
+                <img src="/assets/rock.png" alt="compChoice" id="">  
+            </section>
+            <div class="show-selection flex-row hidden">
+                <p>🕵🏻 ☝️</p>
+                <p>🦹🏼 ☝️</p>
+            </div>
             <section class="game-one">
                 <p>Classic 🪨 📃 ✂️</p>
                 <p>Rock > Scissors</p>
                 <p>Scissors > Paper</p>
                 <p>Paper > Rock</p>
             </section>
+            <section class="rock-paper-scissors-fighters flex-row hidden" id="classicFighters">
+                <img src="/assets/rock.png" alt="rock" id="rockFighter">
+                <img src="/assets/paper.png" alt="paper" id="paperFighter">
+                <img src="/assets/scissors.png" alt="scissors" id="scissorsFighter">
+            </section>
+            <section class="stand-fighters flex-row hidden">
+                <img src="/assets/koichi-char.png" alt="Koichi" id="koichiFighter">
+                <img src="/assets/kira-char.png" alt="Kira" id="kiraFighter">
+                <img src="/assets/jotaro-char.png" alt="Jotaro" id="jotaroFighter">
+                <img src="/assets/dio-char.png" alt="Dio Brando" id="dioFighter">
+                <img src="/assets/josuke-char.png" alt="Josuke" id="josukeFighter">
+            </section>
             <section class="game-two">
-                <p>🪨 📃 ✂️ JOJO</p>
+                <p>🕵🏻 🪨 📃 ✂️ JOJO 🦹🏼</p>
                 <p>A more difficult twist based on JOJO the anime</p>
+                <p>Click on the character names below to learn more!</p>
+                <p><a href="https://jojo.fandom.com/wiki/Dio_Brando">Dio</a> > Koichi & Josuke</p>
+                <p><a href="https://jojo.fandom.com/wiki/Yoshikage_Kira">Kira</a> > Dio & Jotaro </p>
+                <p><a href="https://jojo.fandom.com/wiki/Josuke_Higashikata">Josuke</a> > Kira & Koichi </p>
+                <p><a href="https://jojo.fandom.com/wiki/Jotaro_Kujo">Jotaro</a> > Josuke & Dio </p>
+                <p><a href="https://jojo.fandom.com/wiki/Koichi_Hirose">Koichi</a> > Jotaro & Kira </p>
             </section>
         </section>
         <section class="right-side flex-column">
             <div class="flex-column">
                 <p>🦹🏼</p>
                 <p>Enemy</p>
-                <p>Wins: 0</p>
+                <p id="enemyWins">0</p>
+                <p>Wins</p>
             </div>
         </section>
     </main>
+    <script src="game.js"></script>
+    <script src="player.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

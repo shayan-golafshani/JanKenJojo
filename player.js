@@ -1,54 +1,34 @@
 class Player{
-
-    //one instance is a computer the other is a player maybe we can base
-    //if off a boolean value that's passed into the constructor
-
-    constructor(userObj){
-        //key-value pairs
-        this.name = userObj.name || 'Default';
+    constructor(name){
+        this.name = name;
+        this.token = '🙀';
         this.wins = 0;
-        this.handUser = 0;
-        this.handComputer = 0;
-
     }
 
-    /*
-    constructor - properties should include: name (ex: 'hannah'), token (ex: '⭐️'), wins (ex: 0)
-    saveWinsToStorage
-    retrieveWinsFromStorage
-    takeTurn
-    */
-
-    //methods
-    throwHandUser(userClickedImg){
-
+    saveWinsToStorage(){
+        if(this.name === 'Hero'){
+            localStorage.setItem('heroWins', this.wins);
+        } else if (this.name === 'Enemy'){
+            localStorage.setItem('enemyWins', this.wins);
+        } else {
+            console.log('Error: cant save wins based on playerName.');
+        }
     }
 
-    throwHandComputer(){
-
+    retrieveWinsFromStorage(){
+        if(this.name === 'Hero'){
+            return localStorage.getItem('heroWins');
+        } else if (this.name === 'Enemy'){
+            return localStorage.getItem('enemyWins');
+        } else {
+            console.log('Error: cant retrieve wins based on playerName.');
+        }
     }
-
-    playClassic(){
-
-    }
-
-    playRockPaperScissorsSpock(){
-
-    }
-
-/* 
-Spock beats scissors and rock, but loses to paper and lizard.
-
-Lizard beats Spock and paper, but loses to rock and scissors.
-
-Rock beats scissors and lizard, but loses to paper and Spock.
-
-Paper beats rock and Spock, but loses to scissors and lizard.
-
-Scissors beats paper and lizard, but loses to rock and Spock.
-*/
-
-
+    // takeTurn(player){
+    //     this.name === 'Hero' ? this.token = '🕵🏻' : this.token = '🦹🏼';
+    //     //return something maybe you want to update the score
+    //     //update the gameboard, and reset it so that users can play again
+    //     //maybe you want to update the data model
+    //     //so that I can then manipulate the dom from main.js 
+    // }
 }
-
-module.exports = Player
