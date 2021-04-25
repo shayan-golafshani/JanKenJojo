@@ -17,6 +17,7 @@ var kiraFighter = document.querySelector('#kiraFighter');
 var koichiFighter = document.querySelector('#koichiFighter');
 
 var instructionsText = document.querySelector('#instructionsText');
+var outcomeText = document.getElementById('outcome');
 //add query selectors for all your sets of fighters!
 
 var game1arr = ["Rock", "Paper", "Scissors"];
@@ -45,15 +46,45 @@ jojoGame.addEventListener('click', function(e){
   //need selector for jojo fighters
   //show(jojoFighters);
   instructionsText.innerText = 'Choose your fighter!'
-  game = new Game();
+  game = new Game('Jojo');
 });
 
 rockFighter.addEventListener('click', function(e){
-  game.findWinner(e);
-  console.log(e.target.id)
+  var outcomeOfMatch = game.findWinner(e);
+  if(outcomeOfMatch) {
+    outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"  
+  } else if(game.isDraw) {
+    outcomeText.innerText = "You tied 🙀"  
+  } else {
+    outcomeText.innerText = "The enemy beat you 💉"
+  }
+  show(outcomeText);
+  //console.log(e.target.id)
 });
-paperFighter.addEventListener('click', someFunction);
-scissorsFighter.addEventListener('click', someFunction);
+paperFighter.addEventListener('click', function(e){
+  var outcomeOfMatch = game.findWinner(e);
+  if(outcomeOfMatch) {
+    outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"  
+  } else if(game.isDraw) {
+    outcomeText.innerText = "You tied 🙀"  
+  } else {
+    outcomeText.innerText = "The enemy beat you 💉"
+  }
+  show(outcomeText);
+  //console.log(e.target.id)
+});
+scissorsFighter.addEventListener('click', function(e){
+  var outcomeOfMatch = game.findWinner(e);
+  if(outcomeOfMatch) {
+    outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"  
+  } else if(game.isDraw) {
+    outcomeText.innerText = "You tied 🙀"  
+  } else {
+    outcomeText.innerText = "The enemy beat you 💉"
+  }
+  show(outcomeText);
+  //console.log(e.target.id)
+});
 
 dioFighter.addEventListener('click', someFunction);
 josukeFighter.addEventListener('click', someFunction);

@@ -29,6 +29,7 @@ class Game {
 
 
     findWinner(event){
+        debugger;
         var userMove = event.target.id;
         var computerMove = this.computerWeapon;
 
@@ -44,7 +45,6 @@ class Game {
             this.isDraw = true;
             console.log(`You tied 🙀`);
             return false;
-        
         }
 
         if(userMove === "rockFighter" && computerMove === "Scissors" ||
@@ -53,10 +53,12 @@ class Game {
                 this.player.wins++;
                 this.player.saveWinsToStorage();
                 console.log(`You're a winner`);
+                return true;
             } else {
                 this.computerEnemy.wins++;
                 this.computerEnemy.saveWinsToStorage();
                 console.log(`The enemy beat you`);
+                return false;
             }
         //consider using a switch-statement
         //if()
