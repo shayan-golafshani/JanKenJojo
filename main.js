@@ -53,39 +53,17 @@ jojoGame.addEventListener('click', function(e){
   game = new Game('Jojo');
 });
 
-rockFighter.addEventListener('click', playClassicGame);
-paperFighter.addEventListener('click', playClassicGame);
-scissorsFighter.addEventListener('click', playClassicGame);
-dioFighter.addEventListener('click', playJojoGame);
-josukeFighter.addEventListener('click', playJojoGame);
-jotaroFighter.addEventListener('click', playJojoGame);
-kiraFighter.addEventListener('click', playJojoGame);
-koichiFighter.addEventListener('click', playJojoGame);
+rockFighter.addEventListener('click', playGame);
+paperFighter.addEventListener('click', playGame);
+scissorsFighter.addEventListener('click', playGame);
+dioFighter.addEventListener('click', playGame);
+josukeFighter.addEventListener('click', playGame);
+jotaroFighter.addEventListener('click', playGame);
+kiraFighter.addEventListener('click', playGame);
+koichiFighter.addEventListener('click', playGame);
 
-function playClassicGame(e){
-  hide(classicFighters);
-  var outcomeOfMatch = game.findWinner(e);
-  if(outcomeOfMatch) {
-    outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"
-    heroWins.innerText = game.player.retrieveWinsFromStorage();  
-  } else if(game.isDraw) {
-    outcomeText.innerText = "You tied 🙀"  
-  } else {
-    outcomeText.innerText = "The enemy beat you 💉"
-    enemyWins.innerText = game.computerEnemy.retrieveWinsFromStorage();
-  }
-  show(outcomeText);
-  show(changeGameBtn);
-  var choices = function (){
-    show(comparisonArea);
-    show(selectionTokens);
-    game.resetGame();
-  }
-  setTimeout(choices, 1000)
-}
-
-function playJojoGame(e){
-  hide(jojoFighters);
+function playGame(e){
+  game.gameType === 'classic' ? hide(classicFighters) : hide(jojoFighters);
   var outcomeOfMatch = game.findWinner(e);
   if(outcomeOfMatch) {
     outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"
@@ -107,7 +85,5 @@ function playJojoGame(e){
 }
 
 function randomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min}
-
 function hide(elem) {elem.classList.add('hidden')}
-  
 function show(elem) {elem.classList.remove('hidden')}
