@@ -91,6 +91,9 @@ function playClassicGame(e){
     show(selectionTokens);
   }
   setTimeout(choices, 2000)
+  //need to save wins to local storage
+  //clear board or restart it. 
+  //show the change game button babes
 }
 
 function someFunction(){
