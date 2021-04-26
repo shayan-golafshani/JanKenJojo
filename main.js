@@ -58,7 +58,7 @@ function playGame(e){
   game.gameType === 'classic' ? hide(classicFighters) : hide(jojoFighters);
   var outcomeOfMatch = game.findWinner(e);
   if(outcomeOfMatch) {
-    outcomeText.innerText = "Booyah, baby! You won bitch! 💪🏼"
+    outcomeText.innerText = "Booyah, baby! You won baby! 💪🏼"
     heroWins.innerText = game.player.retrieveWinsFromStorage();  
   } else if(game.isDraw) {
     outcomeText.innerText = "You tied 🙀"  

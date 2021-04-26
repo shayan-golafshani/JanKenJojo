@@ -1,13 +1,4 @@
-// A Game should include:
-// Two Player instances
-// A way to keep track of the data for the game board
-// A way to keep track of the selected game type
-// A way to check the Game’s board data for win conditions
-// A way to detect when a game is a draw (no one has won)
-// A way to reset the Game’s board to begin a new game
-
 class Game {
-
     constructor(gameType){
         this.player = new Player('Hero');
         this.computerEnemy = new Player('Enemy');
@@ -17,7 +8,6 @@ class Game {
     }
 
     retrieveWins(){
-        console.log(this);
         var playerWins = this.player.retrieveWinsFromStorage();
         var computerWins = this.computerEnemy.retrieveWinsFromStorage();
         var wins = {
@@ -62,7 +52,6 @@ class Game {
         } else if (userMove === "josukeFighter"){
             img1path = 'josuke';
         } else {
-            console.log('Error: cant assign img file-path');
         } return img1path;
     }
 
@@ -84,7 +73,6 @@ class Game {
         } else if (computerMove === "Josuke"){
             img2path = 'josuke';
         } else {
-            console.log('Error: cant assign img file-path');
         } return img2path;
     }
     //update the area with the user's choices        //update images based on logic
@@ -98,8 +86,8 @@ class Game {
             img1path = getImagePath1(userMove);
             img2path = getImagePath2(computerMove);
             comparisonArea.innerHTML = `
-                <img src="assets/${img1path}-char.png" alt="userChoice" id=""> 
-                <img src="assets/${img2path}-char.png" alt="compChoice" id=""> 
+                <img src="assets/${img1path}-stand.png" alt="userChoice" id=""> 
+                <img src="assets/${img2path}-stand.png" alt="compChoice" id=""> 
             `
 
             if(userMove === "koichiFighter" && computerMove === "Koichi" ||
@@ -108,7 +96,7 @@ class Game {
         userMove === "dioFighter" && computerMove === "Dio" ||
         userMove === "josukeFighter" && computerMove === "Josuke") {
             this.isDraw = true;
-            console.log(`You tied 🙀`);
+            //console.log(`You tied 🙀`);
             return false;
         }
 
@@ -120,12 +108,12 @@ class Game {
 
                 this.player.wins++;
                 this.player.saveWinsToStorage();
-                console.log(`You're a winner`);
+              //  console.log(`You're a winner`);
                 return true;
             } else {
                 this.computerEnemy.wins++;
                 this.computerEnemy.saveWinsToStorage();
-                console.log(`The enemy beat you`);
+                //console.log(`The enemy beat you`);
                 return false;
             }
         }
@@ -135,7 +123,7 @@ class Game {
         userMove === "paperFighter" && computerMove === "Paper" ||
         userMove === "scissorsFighter" && computerMove === "Scissors"){
             this.isDraw = true;
-            console.log(`You tied 🙀`);
+            //console.log(`You tied 🙀`);
             return false;
         }
 
@@ -144,12 +132,12 @@ class Game {
             userMove === "scissorsFighter" && computerMove === "Paper") {
                 this.player.wins++;
                 this.player.saveWinsToStorage();
-                console.log(`You're a winner`);
+              //  console.log(`You're a winner`);
                 return true;
             } else {
                 this.computerEnemy.wins++;
                 this.computerEnemy.saveWinsToStorage();
-                console.log(`The enemy beat you`);
+                //console.log(`The enemy beat you`);
                 return false;
             }
     }
