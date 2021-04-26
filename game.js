@@ -16,9 +16,7 @@ class Game {
         this.isDraw = false;
     }
 
-    //methods
     retrieveWins(){
-        // debugger;
         console.log(this);
         var playerWins = this.player.retrieveWinsFromStorage();
         var computerWins = this.computerEnemy.retrieveWinsFromStorage();

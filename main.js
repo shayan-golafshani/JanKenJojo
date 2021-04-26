@@ -2,28 +2,16 @@
 var changeGameBtn = document.querySelector('#changeGameBtn');
 var classicGame = document.querySelector('.game-one');
 var jojoGame = document.querySelector('.game-two');
-
-//fighter query selectors
+//fighter-area
 var classicFighters = document.querySelector('#classicFighters');
 var jojoFighters = document.querySelector('.stand-fighters');
-
-var rockFighter = document.querySelector('#rockFighter');
-var paperFighter = document.querySelector('#paperFighter');
-var scissorsFighter = document.querySelector('#scissorsFighter');
-
-var dioFighter = document.querySelector('#dioFighter');
-var josukeFighter = document.querySelector('#josukeFighter');
-var jotaroFighter = document.querySelector('#jotaroFighter');
-var kiraFighter = document.querySelector('#kiraFighter');
-var koichiFighter = document.querySelector('#koichiFighter');
-
+//dom-areas that show data
 var instructionsText = document.querySelector('#instructionsText');
 var outcomeText = document.getElementById('outcome');
 var heroWins = document.getElementById('heroWins');
 var enemyWins = document.getElementById('enemyWins');
 var comparisonArea = document.getElementById('userComputerComparison');
 var selectionTokens = document.querySelector('.show-selection');
-//add query selectors for all your sets of fighters!
 
 var game1arr = ["Rock", "Paper", "Scissors"];
 var game2arr = ["Dio", "Kira", "Josuke", "Jotaro", "Koichi"];
@@ -53,14 +41,18 @@ jojoGame.addEventListener('click', function(e){
   game = new Game('Jojo');
 });
 
-rockFighter.addEventListener('click', playGame);
-paperFighter.addEventListener('click', playGame);
-scissorsFighter.addEventListener('click', playGame);
-dioFighter.addEventListener('click', playGame);
-josukeFighter.addEventListener('click', playGame);
-jotaroFighter.addEventListener('click', playGame);
-kiraFighter.addEventListener('click', playGame);
-koichiFighter.addEventListener('click', playGame);
+classicFighters.addEventListener('click', function(e){
+  var clickId = e.target.id;
+  clickId === 'rockFighter' || clickId === 'paperFighter' || clickId === 'scissorsFighter' ?
+  playGame(e) : console.log("Click not registered");
+});
+
+jojoFighters.addEventListener('click', function(e){
+  var id = e.target.id;
+  id === 'dioFighter' || id === 'josukeFighter' || id === 'jotaroFighter' ||
+  id === 'kiraFighter' || id === 'koichiFighter' ?
+  playGame(e) : console.log("Click not registered");
+})
 
 function playGame(e){
   game.gameType === 'classic' ? hide(classicFighters) : hide(jojoFighters);
