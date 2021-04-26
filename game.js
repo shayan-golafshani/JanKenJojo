@@ -89,8 +89,8 @@ class Game {
     }
     //update the area with the user's choices        //update images based on logic
         comparisonArea.innerHTML = `
-            <img src="/assets/${img1path}.png" alt="userChoice" id=""> 
-            <img src="/assets/${img2path}.png" alt="compChoice" id=""> 
+            <img src="assets/${img1path}.png" alt="userChoice" id=""> 
+            <img src="assets/${img2path}.png" alt="compChoice" id=""> 
         `
 
         if(this.gameType !== 'classic'){
@@ -98,8 +98,8 @@ class Game {
             img1path = getImagePath1(userMove);
             img2path = getImagePath2(computerMove);
             comparisonArea.innerHTML = `
-                <img src="/assets/${img1path}-char.png" alt="userChoice" id=""> 
-                <img src="/assets/${img2path}-char.png" alt="compChoice" id=""> 
+                <img src="assets/${img1path}-char.png" alt="userChoice" id=""> 
+                <img src="assets/${img2path}-char.png" alt="compChoice" id=""> 
             `
 
             if(userMove === "koichiFighter" && computerMove === "Koichi" ||
