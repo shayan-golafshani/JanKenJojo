@@ -16,10 +16,15 @@ class Game {
         this.isDraw = false;
     }
 
-    //methods
     retrieveWins(){
+        console.log(this);
         var playerWins = this.player.retrieveWinsFromStorage();
         var computerWins = this.computerEnemy.retrieveWinsFromStorage();
+        var wins = {
+            playerWins : this.playerWins,
+            computerWins : this.computerWins 
+        };
+        return wins;
     }
 
     storeWins(){
@@ -29,8 +34,10 @@ class Game {
 
 
     findWinner(event){
+        this.player.wins = this.player.retrieveWinsFromStorage();
+        this.computerEnemy.wins = this.computerEnemy.retrieveWinsFromStorage();
+
         this.isDraw = false;
-        // debugger;
         var userMove = event.target.id;
         var computerMove = this.computerWeapon;
         var img1path = getImagePath1(userMove);
@@ -86,7 +93,6 @@ class Game {
             <img src="/assets/${img2path}.png" alt="compChoice" id=""> 
         `
 
-    
         if(this.gameType !== 'classic'){
             computerMove = game2arr[randomInt(0,4)];
             img1path = getImagePath1(userMove);
@@ -96,9 +102,6 @@ class Game {
                 <img src="/assets/${img2path}-char.png" alt="compChoice" id=""> 
             `
 
-            //do jojo logic here
-
-            //start jojo logic
             if(userMove === "koichiFighter" && computerMove === "Koichi" ||
         userMove === "kiraFighter" && computerMove === "Kira" ||
         userMove === "jotaroFighter" && computerMove === "Jotaro" ||
@@ -109,14 +112,12 @@ class Game {
             return false;
         }
 
-        // if(userMove === "rockFighter" && computerMove === "Scissors" ||
-        //     userMove === "paperFighter" && computerMove === "Rock" ||
-        //     userMove === "scissorsFighter" && computerMove === "Paper") 
         if(userMove === "koichiFighter" && (computerMove === "Jotaro"||computerMove === "Kira" )||
         userMove === "kiraFighter" && (computerMove === "Jotaro"||computerMove === "Dio" )||
         userMove === "jotaroFighter" && (computerMove === "Josuke"||computerMove === "Dio" )||
         userMove === "dioFighter" && (computerMove === "Josuke"||computerMove === "Koichi" )||
         userMove === "josukeFighter" && (computerMove === "Kira"||computerMove === "Koichi" )) {
+
                 this.player.wins++;
                 this.player.saveWinsToStorage();
                 console.log(`You're a winner`);
@@ -128,8 +129,7 @@ class Game {
                 return false;
             }
         }
-    
-    
+        //normal game logic
         //check for draw
         if(userMove === "rockFighter" && computerMove === "Rock" ||
         userMove === "paperFighter" && computerMove === "Paper" ||
@@ -155,10 +155,25 @@ class Game {
     }
 
 
-    resetGame(gameType){
-        
-        //function
-        this.retrieveWins();
-        setTimeout();
+    resetGame(){
+        var totalWins = this.retrieveWins();
+        //debugger;
+  setTimeout(function(){
+    if(game.gameType === 'classic'){
+        hide(comparisonArea);
+        hide(selectionTokens);
+        hide(outcomeText);
+        show(classicFighters);
+        //make new game and make sure the wins carry over
+        game.computerWeapon = game1arr[randomInt(0, 2)];
+    } else {
+        hide(comparisonArea);
+        hide(selectionTokens);
+        hide(outcomeText);
+        show(jojoFighters);
+        //make new game and make sure the wins carry over
+        game.computerWeapon = game2arr[randomInt(0, 4)];
+    }
+        }, 2000);
     }
 }
