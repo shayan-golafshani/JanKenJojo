@@ -54,7 +54,8 @@ function gameSetupClassic(classicGameBool){
 }
 
 function playGame(e){
-  var classicGameBool = game.gameType === 'classic' ? (hide(classicFighters), bool = true) : (hide(jojoFighters), bool = false);
+  var classicGameBool = game.gameType === 'classic' ?
+  (hide(classicFighters), bool = true) : (hide(jojoFighters), bool = false);
 
   var outcomeOfMatch = game.findWinner(e);
   if(outcomeOfMatch) {
@@ -115,7 +116,6 @@ function startOver (){
 </audio>`
 instructionsText.innerText = "Reloading game, better luck next time!";
   var timeout = function(){
-  hide(startOverBtn);
   localStorage.clear();
   location.reload()
   }
