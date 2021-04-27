@@ -1,12 +1,11 @@
-//querySelectors
 var changeGameBtn = document.querySelector('#changeGameBtn');
 var startOverBtn = document.querySelector('#startOverBtn');
 var classicGame = document.querySelector('.game-one');
 var jojoGame = document.querySelector('.game-two');
-//fighter-area
+
 var classicFighters = document.querySelector('#classicFighters');
 var jojoFighters = document.querySelector('.stand-fighters');
-//dom-areas that show data
+
 var instructionsText = document.querySelector('#instructionsText');
 var outcomeText = document.getElementById('outcome');
 var heroWins = document.getElementById('heroWins');
@@ -24,14 +23,14 @@ window.onload = function(){
 changeGameBtn.addEventListener('click', function(){
   location.reload()});
 
-startOverBtn.addEventListener('click', startOver);
+startOverBtn.addEventListener('click', startOverWithThemeMusic);
 
 classicGame.addEventListener('click', function(){
-  gameSetupClassic(true);
+  setupClassicGame(true);
 });
 
 jojoGame.addEventListener('click', function(){
-  gameSetupClassic(false);
+  setupClassicGame(false);
 });
 
 classicFighters.addEventListener('click', checkValidClickArea);
@@ -45,7 +44,7 @@ function checkValidClickArea(e){
     playGame(e) : console.log("Click not registered");  
 }
 
-function gameSetupClassic(classicGameBool){
+function setupClassicGame(classicGameBool){
   hide(classicGame);
   hide(jojoGame);
   classicGameBool ? (show(classicFighters), instructionsText.innerText = 'Choose your fighter!' , game = new Game()) :
@@ -54,7 +53,7 @@ function gameSetupClassic(classicGameBool){
 }
 
 function playGame(e){
-  var classicGameBool = game.gameType === 'classic' ?
+  var isClassicGame = game.gameType === 'classic' ?
   (hide(classicFighters), bool = true) : (hide(jojoFighters), bool = false);
 
   var outcomeOfMatch = game.findWinner(e);
@@ -70,19 +69,19 @@ function playGame(e){
   }
   show(outcomeText);
   show(changeGameBtn);
-  showImg(e, classicGameBool);
-  var choices = function (){
+  showImg(e, isClassicGame);
+  var displayFighters = function (){
     show(comparisonArea);
     show(selectionTokens);
     game.resetGame();
   }
-  setTimeout(choices, 1150)
+  setTimeout(displayFighters, 1150)
 }
 
-function showImg (e , classicGameBool) {
+function showImg (e , isClassicGame) {
   var img1path = e.target.id;
   var img2path = game.computerWeapon;
-        if(!classicGameBool){
+        if(!isClassicGame){
           img1path += '-stand';
           img2path += '-stand';
         }
@@ -108,13 +107,14 @@ function prepNextFight(){
   hide(outcomeText);
 }
 
-function startOver (){
+function startOverWithThemeMusic (){
   enemyWins.innerHTML = `
 <audio autoplay="true">
   <source src="assets/jojo-theme-wave.wav" type="audio/wav">
   <source src="assets/jojo-theme.mp3" type="audio/mpeg">
 </audio>`
-instructionsText.innerText = "Reloading game, better luck next time!";
+
+instructionsText.innerText = "Reloading game, better luck next time...";
   var timeout = function(){
   localStorage.clear();
   location.reload()
