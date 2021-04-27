@@ -31,20 +31,16 @@ jojoGame.addEventListener('click', function(){
   gameSetupClassic(false);
 });
 
+classicFighters.addEventListener('click', checkValidClickArea);
+jojoFighters.addEventListener('click', checkValidClickArea);
 
-
-classicFighters.addEventListener('click', function(e){
+function checkValidClickArea(e){
   var clickId = e.target.id;
-  clickId === 'rock' || clickId === 'paper' || clickId === 'scissors' ?
-  playGame(e) : console.log("Click not registered");
-});
-
-jojoFighters.addEventListener('click', function(e){
-  var id = e.target.id;
-  id === 'dio' || id === 'josuke' || id === 'jotaro' ||
-  id === 'kira' || id === 'koichi' ?
-  playGame(e) : console.log("Click not registered");
-});
+    clickId === 'rock' || clickId === 'paper' || clickId === 'scissors' ||
+    clickId === 'dio' || clickId === 'josuke' || clickId === 'jotaro' ||
+    clickId === 'kira' || clickId === 'koichi' ?
+    playGame(e) : console.log("Click not registered");  
+}
 
 function gameSetupClassic(classicGameBool){
   hide(classicGame);
