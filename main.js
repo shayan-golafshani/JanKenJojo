@@ -20,25 +20,18 @@ window.onload = function(){
   enemyWins.innerText = localStorage.getItem('enemyWins') || '0';
 };
 
-changeGameBtn.addEventListener('click', function(){ location.reload()});
+changeGameBtn.addEventListener('click', function(){
+  location.reload()});
 
-classicGame.addEventListener('click', function(e){
-  hide(classicGame);
-  hide(jojoGame);
-  show(classicFighters);
-  instructionsText.innerText = 'Choose your fighter!'
-  game = new Game();
-  game.computerWeapon = chooseFighters()
+classicGame.addEventListener('click', function(){
+  gameSetupClassic(true);
 });
 
-jojoGame.addEventListener('click', function(e){
-  hide(classicGame);
-  hide(jojoGame);
-  show(jojoFighters);
-  instructionsText.innerText = 'Choose your stand fighter!'
-  game = new Game('Jojo');
-  game.computerWeapon = chooseFighters();
+jojoGame.addEventListener('click', function(){
+  gameSetupClassic(false);
 });
+
+
 
 classicFighters.addEventListener('click', function(e){
   var clickId = e.target.id;
@@ -53,8 +46,16 @@ jojoFighters.addEventListener('click', function(e){
   playGame(e) : console.log("Click not registered");
 });
 
+function gameSetupClassic(classicGameBool){
+  hide(classicGame);
+  hide(jojoGame);
+  classicGameBool ? (show(classicFighters), instructionsText.innerText = 'Choose your fighter!' , game = new Game()) :
+  (show(jojoFighters), instructionsText.innerText = 'Choose your stand fighter!' , game = new Game('Jojo'));
+  game.computerWeapon = chooseFighters()
+}
+
 function playGame(e){
-  var bool = game.gameType === 'classic' ? (hide(classicFighters), bool = true) : (hide(jojoFighters), bool = false);
+  var classicGameBool = game.gameType === 'classic' ? (hide(classicFighters), bool = true) : (hide(jojoFighters), bool = false);
 
   var outcomeOfMatch = game.findWinner(e);
   if(outcomeOfMatch) {
@@ -68,7 +69,7 @@ function playGame(e){
   }
   show(outcomeText);
   show(changeGameBtn);
-  showImg(e, bool);
+  showImg(e, classicGameBool);
   var choices = function (){
     show(comparisonArea);
     show(selectionTokens);
@@ -77,16 +78,16 @@ function playGame(e){
   setTimeout(choices, 1000)
 }
 
-function showImg (e , bool) {
+function showImg (e , classicGameBool) {
   var img1path = e.target.id;
   var img2path = game.computerWeapon;
-        if(!bool){
+        if(!classicGameBool){
           img1path += '-stand';
           img2path += '-stand';
         }
   comparisonArea.innerHTML = `
-    <img src="assets/${img1path}.png" alt="userChoice"> 
-    <img src="assets/${img2path}.png" alt="compChoice"> `;
+    <img src="assets/${img1path}.png" alt="usersChoice"> 
+    <img src="assets/${img2path}.png" alt="computerChoice"> `;
 }
 
 function chooseFighters(){
