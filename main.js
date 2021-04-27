@@ -26,7 +26,6 @@ changeGameBtn.addEventListener('click', function(){
 
 startOverBtn.addEventListener('click', startOver);
 
- 
 classicGame.addEventListener('click', function(){
   gameSetupClassic(true);
 });
@@ -76,7 +75,7 @@ function playGame(e){
     show(selectionTokens);
     game.resetGame();
   }
-  setTimeout(choices, 1000)
+  setTimeout(choices, 1150)
 }
 
 function showImg (e , classicGameBool) {
@@ -109,9 +108,18 @@ function prepNextFight(){
 }
 
 function startOver (){
+  enemyWins.innerHTML = `
+<audio autoplay="true">
+  <source src="assets/jojo-theme-wave.wav" type="audio/wav">
+  <source src="assets/jojo-theme.mp3" type="audio/mpeg">
+</audio>`
+instructionsText.innerText = "Reloading game, better luck next time!";
+  var timeout = function(){
   hide(startOverBtn);
   localStorage.clear();
   location.reload()
+  }
+  setTimeout(timeout, 10500);
 }
 
 function randomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min}
