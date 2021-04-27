@@ -1,5 +1,6 @@
 //querySelectors
 var changeGameBtn = document.querySelector('#changeGameBtn');
+var startOverBtn = document.querySelector('#startOverBtn');
 var classicGame = document.querySelector('.game-one');
 var jojoGame = document.querySelector('.game-two');
 //fighter-area
@@ -23,6 +24,9 @@ window.onload = function(){
 changeGameBtn.addEventListener('click', function(){
   location.reload()});
 
+startOverBtn.addEventListener('click', startOver);
+
+ 
 classicGame.addEventListener('click', function(){
   gameSetupClassic(true);
 });
@@ -56,12 +60,13 @@ function playGame(e){
   var outcomeOfMatch = game.findWinner(e);
   if(outcomeOfMatch) {
     outcomeText.innerText = "Booyah, baby! You won baby! 💪🏼"
-    heroWins.innerText = game.player.retrieveWinsFromStorage();  
+    heroWins.innerText = game.player.retrieveWinsFromStorage();
   } else if(game.isDraw) {
     outcomeText.innerText = "You tied 🙀"  
   } else {
     outcomeText.innerText = "The enemy beat you 💉"
     enemyWins.innerText = game.computerEnemy.retrieveWinsFromStorage();
+    show(startOverBtn);
   }
   show(outcomeText);
   show(changeGameBtn);
@@ -101,6 +106,12 @@ function prepNextFight(){
   hide(comparisonArea);
   hide(selectionTokens);
   hide(outcomeText);
+}
+
+function startOver (){
+  hide(startOverBtn);
+  localStorage.clear();
+  location.reload()
 }
 
 function randomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min}
