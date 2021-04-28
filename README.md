@@ -61,7 +61,7 @@ Please fork the repo and submit a pull request. I'd love to continue to develop 
 3. Then `open index.html` in your terminal to view it on your browser.
 
 ## Technologies Used
-<p align="left">
+<p align="center">
   <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="javascript" />
   <img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white" alt="html5"/>
   <img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
@@ -92,9 +92,12 @@ how to use class methods.
 * Add responsive design principles for mobile use
 * Add more characters from the anime
 * Add more css animations, css psuedo-selectors, and additional sounds
+
 ## Credits
 
 | Author     | Project Manager | Key Contributor |
 | ----------- | ----------- | ----------- |
-| <img src="https://avatars.githubusercontent.com/u/70605985?v=4" alt="Shayan" width="200px"/>     |<img src="https://avatars.githubusercontent.com/u/48163945?v=4" alt="Heather" width="200px"/>      | <img src="https://avatars.githubusercontent.com/u/76501236?v=4" alt="Riley" width="200px"/>            |
-| [Shayan Golafshani](https://github.com/shayan-golafshani)  | [Heather Faerber](https://github.com/hfaerber)       |  [Riley Martin](https://github.com/RMartin0717)           |
+| <img src="https://avatars.githubusercontent.com/u/70605985?v=4" alt="Shayan" width="100px"/> | 
+| <img src="https://avatars.githubusercontent.com/u/48163945?v=4" alt="Heather" width="100px"/> | 
+| <img src="https://avatars.githubusercontent.com/u/76501236?v=4" alt="Riley" width="200px"/>   |
+| [Shayan Golafshani](https://github.com/shayan-golafshani)  | [Heather Faerber](https://github.com/hfaerber) |[Riley Martin] (https://github.com/RMartin0717)|
