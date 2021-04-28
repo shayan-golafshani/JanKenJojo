@@ -75,7 +75,7 @@ function playGame(e){
     show(selectionTokens);
     game.resetGame();
   }
-  setTimeout(displayFighters, 1150)
+  setTimeout(displayFighters, 1350)
 }
 
 function showImg (e , isClassicGame) {
