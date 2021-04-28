@@ -1,11 +1,11 @@
-//querySelectors
 var changeGameBtn = document.querySelector('#changeGameBtn');
+var startOverBtn = document.querySelector('#startOverBtn');
 var classicGame = document.querySelector('.game-one');
 var jojoGame = document.querySelector('.game-two');
-//fighter-area
+
 var classicFighters = document.querySelector('#classicFighters');
 var jojoFighters = document.querySelector('.stand-fighters');
-//dom-areas that show data
+
 var instructionsText = document.querySelector('#instructionsText');
 var outcomeText = document.getElementById('outcome');
 var heroWins = document.getElementById('heroWins');
@@ -20,73 +20,74 @@ window.onload = function(){
   enemyWins.innerText = localStorage.getItem('enemyWins') || '0';
 };
 
-changeGameBtn.addEventListener('click', function(){ location.reload()});
+changeGameBtn.addEventListener('click', function(){
+  location.reload()});
 
-classicGame.addEventListener('click', function(e){
-  hide(classicGame);
-  hide(jojoGame);
-  show(classicFighters);
-  instructionsText.innerText = 'Choose your fighter!'
-  game = new Game();
-  game.computerWeapon = chooseFighters()
+startOverBtn.addEventListener('click', startOverWithThemeMusic);
+
+classicGame.addEventListener('click', function(){
+  setupClassicGame(true);
 });
 
-jojoGame.addEventListener('click', function(e){
-  hide(classicGame);
-  hide(jojoGame);
-  show(jojoFighters);
-  instructionsText.innerText = 'Choose your stand fighter!'
-  game = new Game('Jojo');
-  game.computerWeapon = chooseFighters();
+jojoGame.addEventListener('click', function(){
+  setupClassicGame(false);
 });
 
-classicFighters.addEventListener('click', function(e){
+classicFighters.addEventListener('click', checkValidClickArea);
+jojoFighters.addEventListener('click', checkValidClickArea);
+
+function checkValidClickArea(e){
   var clickId = e.target.id;
-  clickId === 'rock' || clickId === 'paper' || clickId === 'scissors' ?
-  playGame(e) : console.log("Click not registered");
-});
+    clickId === 'rock' || clickId === 'paper' || clickId === 'scissors' ||
+    clickId === 'dio' || clickId === 'josuke' || clickId === 'jotaro' ||
+    clickId === 'kira' || clickId === 'koichi' ?
+    playGame(e) : console.log("Click not registered");  
+}
 
-jojoFighters.addEventListener('click', function(e){
-  var id = e.target.id;
-  id === 'dio' || id === 'josuke' || id === 'jotaro' ||
-  id === 'kira' || id === 'koichi' ?
-  playGame(e) : console.log("Click not registered");
-});
+function setupClassicGame(classicGameBool){
+  hide(classicGame);
+  hide(jojoGame);
+  classicGameBool ? (show(classicFighters), instructionsText.innerText = 'Choose your fighter!' , game = new Game()) :
+  (show(jojoFighters), instructionsText.innerText = 'Choose your stand fighter!' , game = new Game('Jojo'));
+  game.computerWeapon = chooseFighters()
+}
 
 function playGame(e){
-  var bool = game.gameType === 'classic' ? (hide(classicFighters), bool = true) : (hide(jojoFighters), bool = false);
+  var isClassicGame = game.gameType === 'classic' ?
+  (hide(classicFighters), bool = true) : (hide(jojoFighters), bool = false);
 
   var outcomeOfMatch = game.findWinner(e);
   if(outcomeOfMatch) {
     outcomeText.innerText = "Booyah, baby! You won baby! 💪🏼"
-    heroWins.innerText = game.player.retrieveWinsFromStorage();  
+    heroWins.innerText = game.player.retrieveWinsFromStorage();
   } else if(game.isDraw) {
     outcomeText.innerText = "You tied 🙀"  
   } else {
     outcomeText.innerText = "The enemy beat you 💉"
     enemyWins.innerText = game.computerEnemy.retrieveWinsFromStorage();
+    show(startOverBtn);
   }
   show(outcomeText);
   show(changeGameBtn);
-  showImg(e, bool);
-  var choices = function (){
+  showImg(e, isClassicGame);
+  var displayFighters = function (){
     show(comparisonArea);
     show(selectionTokens);
     game.resetGame();
   }
-  setTimeout(choices, 1000)
+  setTimeout(displayFighters, 1150)
 }
 
-function showImg (e , bool) {
+function showImg (e , isClassicGame) {
   var img1path = e.target.id;
   var img2path = game.computerWeapon;
-        if(!bool){
+        if(!isClassicGame){
           img1path += '-stand';
           img2path += '-stand';
         }
   comparisonArea.innerHTML = `
-    <img src="assets/${img1path}.png" alt="userChoice"> 
-    <img src="assets/${img2path}.png" alt="compChoice"> `;
+    <img src="assets/${img1path}.png" alt="usersChoice"> 
+    <img src="assets/${img2path}.png" alt="computerChoice"> `;
 }
 
 function chooseFighters(){
@@ -104,6 +105,21 @@ function prepNextFight(){
   hide(comparisonArea);
   hide(selectionTokens);
   hide(outcomeText);
+}
+
+function startOverWithThemeMusic (){
+  enemyWins.innerHTML = `
+<audio autoplay="true">
+  <source src="assets/jojo-theme-wave.wav" type="audio/wav">
+  <source src="assets/jojo-theme.mp3" type="audio/mpeg">
+</audio>`
+
+instructionsText.innerText = "Reloading game, better luck next time...";
+  var timeout = function(){
+  localStorage.clear();
+  location.reload()
+  }
+  setTimeout(timeout, 10500);
 }
 
 function randomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min}
