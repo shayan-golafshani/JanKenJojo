@@ -97,7 +97,5 @@ how to use class methods.
 
 | Author     | Project Manager | Key Contributor |
 | ----------- | ----------- | ----------- |
-| <img src="https://avatars.githubusercontent.com/u/70605985?v=4" alt="Shayan" width="100px"/> | 
-| <img src="https://avatars.githubusercontent.com/u/48163945?v=4" alt="Heather" width="100px"/> | 
-| <img src="https://avatars.githubusercontent.com/u/76501236?v=4" alt="Riley" width="200px"/>   |
-| [Shayan Golafshani](https://github.com/shayan-golafshani)  | [Heather Faerber](https://github.com/hfaerber) |[Riley Martin] (https://github.com/RMartin0717)|
+<img src="https://avatars.githubusercontent.com/u/70605985?v=4" alt="Shayan" width="100px"/>  | <img src="https://avatars.githubusercontent.com/u/48163945?v=4" alt="Heather" width="100px"/> | <img src="https://avatars.githubusercontent.com/u/76501236?v=4" alt="Riley" width="100px"/> 
+| [Shayan Golafshani](https://github.com/shayan-golafshani)  | [Heather Faerber](https://github.com/hfaerber) | [Riley Martin](https://github.com/RMartin0717) |
