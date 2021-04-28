@@ -61,7 +61,7 @@ Please fork the repo and submit a pull request. I'd love to continue to develop 
 3. Then `open index.html` in your terminal to view it on your browser.
 
 ## Technologies Used
-<p align="center">
+<p align="left">
   <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="javascript" />
   <img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white" alt="html5"/>
   <img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
@@ -95,7 +95,43 @@ how to use class methods.
 
 ## Credits
 
-| Author     | Project Manager | Key Contributor |
-| ----------- | ----------- | ----------- |
-<img src="https://avatars.githubusercontent.com/u/70605985?v=4" alt="Shayan" width="100px"/>  | <img src="https://avatars.githubusercontent.com/u/48163945?v=4" alt="Heather" width="100px"/> | <img src="https://avatars.githubusercontent.com/u/76501236?v=4" alt="Riley" width="100px"/> 
-| [Shayan Golafshani](https://github.com/shayan-golafshani)  | [Heather Faerber](https://github.com/hfaerber) | [Riley Martin](https://github.com/RMartin0717) |
+#### Author
+<table>
+    <tr>
+         <td> Shayan Golafshani <a href="https://github.com/shayan-golafshani">GH</td>
+    </tr>
+    </tr>
+    <td>
+    <img src="https://avatars.githubusercontent.com/u/70605985?v=4" alt="Shayan G GH img"width="150" height="auto" />
+    </td>
+</tr>
+</table>
+
+
+#### Key-Contributor
+<table>
+    <tr>
+         <td> Riley Martin <a href="https://github.com/RMartin0717">GH</td>
+    </tr>
+    </tr>
+    <td><img src="https://avatars.githubusercontent.com/u/76501236?v=4" alt="Riley M GH img"
+ width="150" height="auto" /></td>
+</tr>
+</table>
+
+#### Project Manager
+<table>
+    <tr>
+         <td> Heather Faerber <a href="https://github.com/hfaerber">GH</td>
+    </tr>
+    </tr>
+    <td><img src="https://avatars.githubusercontent.com/u/48163945?v=4" alt="Heather GH img"
+ width="150" height="auto" /></td>
+</tr>
+</table>
+
+**************************************************************************
+###### This project was created for [Turing School of Software and Design](https://turing.io/)
+###### 2021/04/27
+**[Back to top](#table-of-contents)**
+
