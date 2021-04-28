@@ -46,8 +46,8 @@ To solidify and demonstrate the understanding of:
 ## How does the app work?
 
 #### Please watch the video for a demo!
-<iframe width="400" height="315" src="https://www.youtube.com/embed/16vQtc30f_0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+
+<iframe width="400" height="315" src="https://www.youtube.com/embed/16vQtc30f_0" frameborder="0" allowfullscreen> </iframe>
 
 ## Want to contribute?
 Please fork the repo and submit a pull request. I'd love to continue to develop the game with JoJo fans.
