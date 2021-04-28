@@ -66,7 +66,7 @@ Please fork the repo and submit a pull request. I'd love to continue to develop 
   <img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white" alt="html5"/>
   <img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
   <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="Github" />
-  <img src="https://i2.wp.com/www.marcobeltempo.com/wp-content/uploads/2017/09/visual_studio_code_banner_resized.png?resize=1025%2C266" alt="VS-Code" width="110px" height="28px />
+  <img src="https://i2.wp.com/www.marcobeltempo.com/wp-content/uploads/2017/09/visual_studio_code_banner_resized.png?resize=1025%2C266" alt="VS-Code" width="110px" height="28px" />
 </p>
 
 ## Project Reflection
@@ -134,4 +134,3 @@ how to use class methods.
 ###### This project was created for [Turing School of Software and Design](https://turing.io/)
 ###### 2021/04/27
 **[Back to top](#table-of-contents)**
-
