@@ -13,10 +13,10 @@ The name for the game is a fusion of Jan-Ken-Po and JoJo!
 ### Table of Contents
 - [Overview](#overview-and-project-goals)
 - [Features](#features)
-- [How does this work?](#how-does-this-work)
+- [How does this work?](#how-does-the-app-work)
 - [Project Reflection](#project-reflection)
 - [How To Contribute](#want-to-contribute)
-- [Instructions for Running Project](#Instructions-for-running-project)
+- [Instructions for Running Project](#instructions-for-running-project)
 - [Authors and Contributors](#credits)
 
 ## Overview and Project Goals
@@ -46,11 +46,8 @@ To solidify and demonstrate the understanding of:
 ## How does the app work?
 
 #### Please watch the video for a demo!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/16vQtc30f_0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-GitHub Page Link: https://github.com/shayan-golafshani/jan-ken-po
-
-**[Back to top](#table-of-contents)**
+<iframe width="400" height="315" src="https://www.youtube.com/embed/16vQtc30f_0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 
 ## Want to contribute?
 Please fork the repo and submit a pull request. I'd love to continue to develop the game with JoJo fans.
@@ -71,17 +68,17 @@ Please fork the repo and submit a pull request. I'd love to continue to develop 
 
 ## Project Reflection
 
-##### Wins
+#### Wins
 * I got the game functioning and saving wins with local storage.
 * Created JoJo-themed styling with CSS.
 * Gained a better understanding of class to class interactions and
-how to use class methods.
+  how to use class methods.
 
-##### Challenges
+#### Challenges
 * Extracting DOM manipulation logic out of my game class once it was already working 
 * Asking enough questions to fully understand what is expected in the end product
 
-##### Overall Impressions
+#### Overall Impressions
 * I'm proud of my work, it works!
 * I could try to come up with an article explaining the character logic.
 * I learned how to work independently without referencing outside sources.
@@ -98,36 +95,44 @@ how to use class methods.
 #### Author
 <table>
     <tr>
-         <td> Shayan Golafshani <a href="https://github.com/shayan-golafshani">GH</td>
+         <td> Shayan Golafshani <a href="https://github.com/shayan-golafshani">GH</a>
+         </td>
     </tr>
+    <tr>
+        <td>
+          <img src="https://avatars.githubusercontent.com/u/70605985?v=4" alt="Shayan" width="150"/>
+        </td>
     </tr>
-    <td>
-    <img src="https://avatars.githubusercontent.com/u/70605985?v=4" alt="Shayan G GH img"width="150" height="auto" />
-    </td>
-</tr>
 </table>
 
 
 #### Key-Contributor
+
 <table>
     <tr>
-         <td> Riley Martin <a href="https://github.com/RMartin0717">GH</td>
+         <td> Riley Martin <a href="https://github.com/RMartin0717">GH</a>
+         </td>
     </tr>
+    <tr>
+        <td>
+          <img src="https://avatars.githubusercontent.com/u/76501236?v=4" alt="Riley" width="150"/>
+        </td>
     </tr>
-    <td><img src="https://avatars.githubusercontent.com/u/76501236?v=4" alt="Riley M GH img"
- width="150" height="auto" /></td>
-</tr>
 </table>
 
 #### Project Manager
+
+
 <table>
     <tr>
-         <td> Heather Faerber <a href="https://github.com/hfaerber">GH</td>
+         <td> Heather Faerber <a href="https://github.com/hfaerber">GH</a>
+         </td>
     </tr>
+    <tr>
+        <td>
+          <img src="https://avatars.githubusercontent.com/u/48163945?v=4" alt="Heather" width="150"/>
+        </td>
     </tr>
-    <td><img src="https://avatars.githubusercontent.com/u/48163945?v=4" alt="Heather GH img"
- width="150" height="auto" /></td>
-</tr>
 </table>
 
 **************************************************************************
